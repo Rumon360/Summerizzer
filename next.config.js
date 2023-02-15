@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   env: {
-    openaiKey: "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",
+    openaiKey: "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",
   },
 };
 

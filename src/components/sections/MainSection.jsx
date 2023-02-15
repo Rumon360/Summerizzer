@@ -20,6 +20,15 @@ function MainSection() {
   });
   const openai = new OpenAIApi(configuration);
 
+  const DEFAULT_PARAMS = {
+    model: "text-davinci-003",
+    temperature: 0.7,
+    max_tokens: 256,
+    top_p: 1,
+    frequency_penalty: 0,
+    presence_penalty: 0,
+  };
+
   const getTranslation = async (value) => {
     try {
       const data = await axios
@@ -37,25 +46,26 @@ function MainSection() {
     }
   };
 
-  const HandleSubmit = (e) => {
+  const HandleSubmit = async (e) => {
     if (selectedLang?.name?.length > 1 && text.replace(/\s/g, "").length > 1) {
       setLoading(true);
       e.preventDefault();
-      openai
-        .createCompletion({
-          model: "text-davinci-003",
-          prompt: generatePrompt(text),
-          temperature: 0.6,
-          max_tokens: 200,
-        })
-        .then((res) => {
-          if (res.status === 200) {
-            getTranslation(res?.data?.choices[0]?.text);
-          }
-        })
-        .catch((err) => {
-          console.log(err, "An error occured");
-        });
+      const params_ = { ...DEFAULT_PARAMS };
+      const requestOptions = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + String(process.env.openaiKey),
+        },
+        body: JSON.stringify(params_),
+      };
+      const response = await fetch(
+        "https://api.openai.com/v1/completions",
+        requestOptions
+      );
+      const data = await response.json();
+      console.log(data);
+      getTranslation(data?.choices[0].text);
     } else {
       alert("Please Select A Language and Put Input Text!");
     }
