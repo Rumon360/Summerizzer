@@ -78,7 +78,7 @@ function MainSection() {
                 selectedIndex === 0 && "border-2 border-black"
               } rounded-lg py-2`}
             >
-              Tab 1
+              English
             </Tab>
 
             <span className={"font-bold text-2xl"}>|</span>
@@ -87,7 +87,7 @@ function MainSection() {
                 selectedIndex === 1 && "border-2 border-black"
               } rounded-lg py-2`}
             >
-              Tab 2
+              Summerized
             </Tab>
           </Tab.List>
           <Tab.Panels className="mt-3">
