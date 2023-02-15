@@ -24,7 +24,7 @@ function MainSection() {
     try {
       const data = await axios
         .post("/api/getTranslation", {
-          text: value.substr(2),
+          text: value,
           lang: selectedLang.key,
         })
         .then((response) => {
@@ -51,7 +51,7 @@ function MainSection() {
       });
       const data = await response.json();
       if (data) {
-        getTranslation(data?.result?.choices[0].text);
+        getTranslation(data?.result?.choices[0].text.trim());
       }
     } else {
       alert("Please Select A Language and Put Input Text!");
