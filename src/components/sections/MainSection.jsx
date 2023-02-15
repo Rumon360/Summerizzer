@@ -50,7 +50,7 @@ function MainSection() {
         body: JSON.stringify({ text: promptText }),
       });
       const data = await response.json();
-
+      console.log(data);
       if (data) {
         getTranslation(data?.result?.choices[0].text);
       }
