@@ -41,23 +41,27 @@ function MainSection() {
     if (selectedLang?.name?.length > 1 && text.replace(/\s/g, "").length > 1) {
       setLoading(true);
       e.preventDefault();
+      const promptText = generatePrompt(text);
       const response = await fetch("/api/getSummerized", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ text }),
+        body: JSON.stringify({ text: promptText }),
       });
       const data = await response.json();
 
-      getTranslation(data.result.choices[0].text);
+      if (data) {
+        getTranslation(data?.result?.choices[0].text);
+      }
     } else {
       alert("Please Select A Language and Put Input Text!");
     }
   };
 
-  function generatePrompt(text) {
-    return `Summarize this ${text}.\n\nTl;dr`;
+  function generatePrompt(value) {
+    let better = value.replace(/\s+/g, " ").trim();
+    return `Summarize this: ${better}.`;
   }
 
   return (
