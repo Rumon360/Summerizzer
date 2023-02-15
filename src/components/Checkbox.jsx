@@ -15,7 +15,7 @@ function Checkbox({ setSelectedLang }) {
         id="long-value-select"
         instanceId="long-value-select"
         name="language"
-        className="w-[50%]"
+        className="w-[80%] md:w-[50%]"
         options={Langs}
         isClearable={true}
         maxMenuHeight={200}
