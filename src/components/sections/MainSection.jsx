@@ -64,7 +64,7 @@ function MainSection() {
         requestOptions
       );
       const data = await response.json();
-      console.log(data);
+
       getTranslation(data?.choices[0].text);
     } else {
       alert("Please Select A Language and Put Input Text!");
