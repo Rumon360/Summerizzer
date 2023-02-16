@@ -8,7 +8,7 @@ function Nav() {
         <div className="drop" />
         <div className="flex justify-between container items-center">
           <h2 className="text-lg md:text-xl font-bold cursor-pointer">
-            Summe
+            Summa
             <span className="text-xl md:text-3xl font-extrabold px-2">
               &#123; Rizz &#125;
             </span>

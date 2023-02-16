@@ -7,7 +7,7 @@ import Nav from "@/components/sections/Nav";
 
 export default function Home() {
   return (
-    <Layout title="Summerizzer">
+    <Layout title="Summarizzer">
       <Nav />
       <div data-scroll-section>
         <Hero />

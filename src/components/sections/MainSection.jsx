@@ -70,7 +70,7 @@ function MainSection() {
     >
       <div className="main-drop" />
       <h2 className="text-2xl md:text-4xl font-bold text-center">
-        Enter the text you want to Summerise and the output language!
+        Enter the text you want to Summarize and the output language!
       </h2>
       <Checkbox setSelectedLang={setSelectedLang} />
       <div className="glass">
@@ -90,7 +90,7 @@ function MainSection() {
                 selectedIndex === 1 && "border-2 border-black"
               } rounded-lg py-2`}
             >
-              Summerized
+              Summarized
             </Tab>
           </Tab.List>
           <Tab.Panels className="mt-3">
