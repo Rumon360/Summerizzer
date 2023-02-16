@@ -72,6 +72,19 @@ body {
   filter: blur(20px);
 }
 
+.support-drop {
+  background-color: #a9c9ff;
+  background-image: linear-gradient(180deg, #a9c9ff 0%, #ffbbec 100%);
+  position: absolute;
+  bottom: 10%;
+  width: 50%;
+  height: 50%;
+  transform: rotate(-8deg);
+  z-index: -20;
+  left: 0;
+  filter: blur(60px);
+}
+
 .underline-gradient {
   position: relative;
 }
