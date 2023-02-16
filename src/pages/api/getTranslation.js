@@ -1,16 +1,16 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-const { translate } = require("free-translate");
+
+import { translate } from "@vitalets/google-translate-api";
 
 export default async function handler(req, res) {
-  const { text, lang } = req.body;
+  const { mainText, lang } = req.body;
+
+  const { text } = await translate(mainText, { to: lang });
 
   try {
-    const translatedText = await translate(text, {
-      from: "en",
-      to: lang,
-    });
+    const { text } = await translate(mainText, { to: lang });
 
-    res.status(200).json({ data: translatedText });
+    res.status(200).json({ data: text });
   } catch (err) {
     res.status(500).json({ msg: err });
   }

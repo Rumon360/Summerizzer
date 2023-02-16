@@ -24,7 +24,7 @@ function MainSection() {
     try {
       const data = await axios
         .post("/api/getTranslation", {
-          text: value,
+          mainText: value,
           lang: selectedLang.key,
         })
         .then((response) => {
