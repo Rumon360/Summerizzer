@@ -24,9 +24,15 @@ function Nav() {
             >
               About
             </p>
-            {/* <p className="py-1.5 px-3 border-2 border-[#332C39] rounded-full cursor-pointer hover:scale-105 ease-in-out transition-transform">
+            <p
+              onClick={() => {
+                const target = document.querySelector("#support");
+                scroll.scrollTo(target);
+              }}
+              className="py-1.5 px-3 border-2 border-[#332C39] rounded-full cursor-pointer hover:scale-105 ease-in-out transition-transform"
+            >
               Support
-            </p> */}
+            </p>
           </ul>
         </div>
       </div>

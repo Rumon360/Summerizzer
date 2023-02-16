@@ -3,9 +3,12 @@ import React from "react";
 
 function Support() {
   return (
-    <div className="py-16 relative">
+    <div
+      id="support"
+      className="py-16 relative max-w-[80%] md:max-w-4xl mx-auto text-sm md:text-lg"
+    >
       <div className="support-drop" />
-      <h4 className="text-center max-w-4xl mx-auto uppercase leading-relaxed">
+      <h4 className="text-center uppercase leading-relaxed">
         You can support us by buying us a{" "}
         <span className="font-bold">coffee</span>. It&apos;s hard for us to
         afford the OpenAI&apos;s service. So if you support us, it would meant a
