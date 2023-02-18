@@ -10,9 +10,10 @@ function Support() {
       <div className="support-drop" />
       <h4 className="text-center uppercase leading-relaxed">
         You can support us by buying us a{" "}
-        <span className="font-bold">coffee</span>. It&apos;s hard for us to
-        afford the OpenAI&apos;s service. So if you support us, it would meant a
-        lot. Thanks. {": )"}
+        <span className="font-bold">coffee</span>. We are currently using
+        OpenAI&apos;s free tier. We won&apos;t be able to afford the paid
+        version, so if you want this website to stay alive, you can help us by
+        buying as a coffee. Thank You {": )"}
       </h4>
       <a
         target="_blank"
